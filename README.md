@@ -8,7 +8,7 @@
 
 ### 测试框架文件结构
 
-NEU-IoT-CPUDesign
+NEU-IoT-RISCV
 
 ├── README.md       #本文件
 
