@@ -99,7 +99,7 @@ NEU-IoT-RISCV
   > - 本课题内容属于机组课设的改进部分，测试框架基本类似，但是因为处理器核由原来的32位变为64位，相应的模块以及测试都进行了适配，具体细节请阅读源码
   > - 关于要增加哪些指令，请阅读指令集手册
 
-- 结合框架中提供的外设（LED灯、拨码开关和VGA）和总线（这里只是一个1x3的桥，用于将访存指令根据地址分发到不同设备），与自己设计的处理器核共同构成一个简单的SoC，将dual_port_ram_64以及vga_dual_port_ram_64模块替换为vivado中提供的Block Memory Generator IP核（BRAM），并将其命名为`dual_port_ram_64`和`vga_dual_port_ram_64`，之后使用提供的软件程序以及显存初始化数据(software\demo.coe和software\neu-img.coe）分别初始化对应BRAM，之后将整个SoC综合生成bit流文件，并烧写至FPGA，通过VGA线缆连接FPGA和显示器，我们将在显示器中看到显示的图像。software/soc_lite_top.bit文件是我们已经实现并综合好的示例，可以烧写到FPGA中观察现象，如果你的实现正确，则现象应该一致
+- 结合框架中提供的外设（LED灯、拨码开关和VGA）和总线（这里只是一个1x3的桥，用于将访存指令根据地址分发到不同设备），与自己设计的处理器核共同构成一个简单的SoC，将dual_port_ram_64以及vga_dual_port_ram_64模块替换为vivado中提供的Block Memory Generator IP核（BRAM），并将其命名为`dual_port_ram_64`和`vga_dual_port_ram_64`，之后使用提供的软件程序以及显存初始化数据(software\demo.coe和software\neu-img.coe）分别初始化对应BRAM，之后将整个SoC综合生成bit流文件，并烧写至FPGA，通过VGA线缆连接FPGA和显示器，我们将在显示器中看到显示的图像。software\soc_lite_top.bit文件是我们已经实现并综合好的示例，可以烧写到FPGA中观察现象，如果你的实现正确，则现象应该一致
 
   > 当把dual_port_ram_64替换为IP核的时候，一定要注意，是否造成了和原来模块的冲突，可以disable相应的文件来避免冲突
 
