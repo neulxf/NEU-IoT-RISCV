@@ -30,7 +30,7 @@ NEU-IoT-RISCV
 
 1. 请将自己的处理器代码置于 __mycpu__ 文件夹下
 
-2. 打开 __NEU-IoT-CPUDesign\soc_sram_func\run_vivado\mycpu_prj1\mycpu.xpr__ 启动vivado
+2. 打开 __NEU-IoT-RISCV\soc_sram_func\run_vivado\mycpu_prj1\mycpu.xpr__ 启动vivado
 
 3. 在vivado中添加 __mycpu__ 文件夹下的代码
 
@@ -53,11 +53,11 @@ NEU-IoT-RISCV
     |3|提示中二者pc相同，但地址/数据不同|当前指令行为错误|
     |4|vivado编译报错|自行查询文档解决，搜索引擎是个好东西|
 
-9. 通过修改 __NEU-IoT-CPUDesign\soc_sram_func\testbench\mycpu_tb.v__ 中最下方的 __initial__ 模块，可以改变测试的内容。
+9. 通过修改 __NEU-IoT-RISCV\soc_sram_func\testbench\mycpu_tb.v__ 中最下方的 __initial__ 模块，可以改变测试的内容。
 
 10. 使用 __unit_test_all__ 测试并通过，即可认为测试完成（但测试完成并不意味着，处理器的设计是完全正确的，只是在当前的测试中没有发现问题）。
 
-12. 测试框架中 __NEU-IoT-CPUDesign\soc_sram_func\rtl__ 提供了一些基本模块，用于构成SoC，其中的`dual_port_ram_64.v`用于存储指令以及数据
+12. 测试框架中 __NEU-IoT-RISCV\soc_sram_func\rtl__ 提供了一些基本模块，用于构成SoC，其中的`dual_port_ram_64.v`用于存储指令以及数据
 
      > dual_port_ram_64的时序为当拍请求，下一拍取到数据，该模块使用Verilog模拟了真双口BRAM的时序行为，仅是为了仿真测试方便，如果上板，则需要将其替换为BRAM IP核，避免FPGA中逻辑资源的浪费
 
